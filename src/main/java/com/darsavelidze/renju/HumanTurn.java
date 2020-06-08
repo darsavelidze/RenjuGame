@@ -1,7 +1,7 @@
 package com.darsavelidze.renju;
 
 public interface HumanTurn {
-	void setGameTable(GameTable gameTable);
+	void setPlayingField(PlayingField playingField);
 
 	Cell makeTurn(int rowIndex, int columnIndex);
 }
