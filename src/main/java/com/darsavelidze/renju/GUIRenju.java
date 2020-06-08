@@ -70,10 +70,10 @@ public class GUIRenju extends JFrame {
 				final int row = i;
 				final int column = j;
 				cells[i][j] = new JLabel();
-				cells[i][j].setPreferredSize(new Dimension(40, 40));
+				cells[i][j].setPreferredSize(new Dimension(35, 35));
 				cells[i][j].setHorizontalAlignment(SwingConstants.CENTER);
 				cells[i][j].setVerticalAlignment(SwingConstants.CENTER);
-				cells[i][j].setFont(new Font(Font.SERIF, Font.PLAIN, 35));
+				cells[i][j].setFont(new Font(Font.SERIF, Font.PLAIN, 28));
 				cells[i][j].setForeground(Color.BLACK);
 				cells[i][j].setBorder(BorderFactory.createLineBorder(Color.BLACK));
 				add(cells[i][j]);
@@ -141,7 +141,7 @@ public class GUIRenju extends JFrame {
 		for (int i = 0; i < winnerCells.size(); i++) {
 			Cell cell = winnerCells.get(i);
 			cells[cell.getRowIndex()][cell.getColumnIndex()].setForeground(Color.CYAN);
-			cells[cell.getRowIndex()][cell.getColumnIndex()].setFont(new Font(Font.SERIF, Font.BOLD, 35));
+			cells[cell.getRowIndex()][cell.getColumnIndex()].setFont(new Font(Font.SERIF, Font.BOLD, 28));
 		}
 	}
 
