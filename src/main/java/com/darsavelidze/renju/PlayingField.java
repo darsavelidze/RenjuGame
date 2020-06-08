@@ -1,6 +1,6 @@
 package com.darsavelidze.renju;
 
-public interface GameTable {
+public interface PlayingField {
 	CellValue getValue(int rowIndex, int columnIndex);
 
 	void setValue(int rowIndex, int columnIndex, CellValue cellValue);
