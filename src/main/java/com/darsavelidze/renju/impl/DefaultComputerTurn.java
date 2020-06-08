@@ -107,7 +107,7 @@ public class DefaultComputerTurn implements ComputerTurn {
 
 	protected Cell tryMakeTurnInRows(CellValue cellValue, int notBlankCount) {
 		for (int i = 0; i < playingField.getSize(); i++) {
-			for (int j = 0; j < playingField.getSize() - WIN_COUNT - 1; j++) {
+			for (int j = 0; j <= playingField.getSize() - WIN_COUNT; j++) {
 				boolean hasEmptyCells = false;
 				int count = 0;
 				List<Cell> inspectedCells = new ArrayList<>(WIN_COUNT);
@@ -134,12 +134,12 @@ public class DefaultComputerTurn implements ComputerTurn {
 
 	protected Cell tryMakeTurnInColumns(CellValue cellValue, int notBlankCount) {
 		for (int i = 0; i < playingField.getSize(); i++) {
-			for (int j = 0; j < playingField.getSize() - WIN_COUNT - 1; j++) {
+			for (int j = 0; j <= playingField.getSize() - WIN_COUNT; j++) {
 				boolean hasEmptyCells = false;
 				int count = 0;
 				List<Cell> inspectedCells = new ArrayList<>(WIN_COUNT);
 				for (int k = 0; k < WIN_COUNT; k++) {
-					inspectedCells.add(new Cell(j + k, j));
+					inspectedCells.add(new Cell(j + k, i));
 					if (playingField.getValue(j + k, i) == cellValue) {
 						count++;
 					} else if (playingField.getValue(j + k, i) == CellValue.EMPTY) {
@@ -160,8 +160,8 @@ public class DefaultComputerTurn implements ComputerTurn {
 	}
 
 	protected Cell tryMakeTurnInMainDiagonals(CellValue cellValue, int notBlankCount) {
-		for (int i = 0; i < playingField.getSize() - WIN_COUNT - 1; i++) {
-			for (int j = 0; j < playingField.getSize() - WIN_COUNT - 1; j++) {
+		for (int i = 0; i <= playingField.getSize() - WIN_COUNT; i++) {
+			for (int j = 0; j <= playingField.getSize() - WIN_COUNT; j++) {
 				boolean hasEmptyCells = false;
 				int count = 0;
 				List<Cell> inspectedCells = new ArrayList<Cell>(WIN_COUNT);
@@ -187,7 +187,7 @@ public class DefaultComputerTurn implements ComputerTurn {
 	}
 
 	protected Cell tryMakeTurnInNotMainDiagonals(CellValue cellValue, int notBlankCount) {
-		for (int i = 0; i < playingField.getSize() - WIN_COUNT - 1; i++) {
+		for (int i = 0; i <= playingField.getSize() - WIN_COUNT; i++) {
 			for (int j = WIN_COUNT - 1; j < playingField.getSize(); j++) {
 				boolean hasEmptyCells = false;
 				int count = 0;

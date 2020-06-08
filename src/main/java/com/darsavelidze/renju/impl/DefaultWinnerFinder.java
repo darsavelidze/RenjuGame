@@ -21,13 +21,13 @@ public class DefaultWinnerFinder implements WinnerFinder {
 	private PlayingField playingField;
 
 	@Override
-	public void setPlayingField(PlayingField playinField) {
+	public void setPlayingField(PlayingField playingField) {
 		Objects.requireNonNull(playingField, "Playing field can't be null");
 		if (playingField.getSize() < WIN_COUNT) {
 			throw new IllegalArgumentException("Size of playing field is small: size = " + playingField.getSize()
 					+ ". Minimum requirement: " + WIN_COUNT);
 		}
-		this.playingField = playinField;
+		this.playingField = playingField;
 	}
 
 	@Override
@@ -122,12 +122,12 @@ public class DefaultWinnerFinder implements WinnerFinder {
 	}
 
 	protected List<Cell> findWinnerInNotMainDiagonals(CellValue cellValue) {
-		for (int i = 0; i < playingField.getSize(); i++) {
+		for (int i = 0; i <= playingField.getSize() - WIN_COUNT; i++) {
 			for (int j = WIN_COUNT - 1; j < playingField.getSize(); j++) {
 				List<Cell> checkedCells = new ArrayList<Cell>(WIN_COUNT);
 				for (int k = 0; k < WIN_COUNT; k++) {
-					if (playingField.getValue(i + k, j + k) == cellValue) {
-						checkedCells.add(new Cell(i + k, j + k));
+					if (playingField.getValue(i + k, j - k) == cellValue) {
+						checkedCells.add(new Cell(i + k, j - k));
 						if (checkedCells.size() == WIN_COUNT) {
 							return checkedCells;
 						}
