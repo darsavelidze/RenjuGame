@@ -95,7 +95,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>net.devstudy.gomoku.GUIGomoku</mainClass>
+							<mainClass>com.darsavelidze.renju.GUIRenju</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

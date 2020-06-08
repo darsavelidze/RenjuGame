@@ -2,5 +2,4 @@
 .settings/*
 .classpath
 target/*
-!target/renju-0.0.1-SNAPSHOT-jar-with-dependencies.jar
-/target/
+!/target/renju-0.0.1-SNAPSHOT-jar-with-dependencies.jar
