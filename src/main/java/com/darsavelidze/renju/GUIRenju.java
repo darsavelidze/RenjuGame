@@ -159,7 +159,7 @@ public class GUIRenju extends JFrame {
 		for (int i = 0; i < playingField.getSize(); i++) {
 			for (int j = 0; j < playingField.getSize(); j++) {
 				cells[i][j].setText(playingField.getValue(i, j).getValue());
-				cells[i][j].setFont(new Font(Font.SERIF, Font.PLAIN, 35));
+				cells[i][j].setFont(new Font(Font.SERIF, Font.PLAIN, 28));
 				cells[i][j].setForeground(Color.BLACK);
 			}
 		}
